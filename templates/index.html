@@ -1,0 +1,29 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <main class="px-3">
+    <h1>Fast, Secure and friendly integration.</h1>
+    <p class="lead">
+      This api will let you interact with images stored on cortex server.
+      <br />
+      The api will let you fetch and resize images to get the most out of your
+      images
+    </p>
+    <p class="lead">
+      <a
+        href="/api/docs"
+        class="btn btn-lg btn-secondary fw-bold border-white bg-gray"
+        >API Documentation</a
+      >
+    </p>
+  </main>
+
+  <footer class="mt-auto text-white-50">
+    <p>
+      Cortx images, by
+      <a href="https://niradler.com" class="text-white">@niradler</a>.
+    </p>
+  </footer>
+</div>
+
+{% endblock %}
