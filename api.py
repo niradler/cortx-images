@@ -53,6 +53,20 @@ def get_image(filename):
     return send_file(file_path, mimetype='image/{}'.format(ext))
 
 
+@app.route('/images', methods=['post'])
+@require_api_key
+def upload():
+    if request.files['image'].filename != '':
+        image = request.files['image']
+        file_path = './.tmp/{}'.format(image.filename)
+        image.save(file_path)
+        uploaded = bucket.download(file_path)
+        if uploaded:
+            return "uploaded"
+        return abort(400)
+    return abort(500)
+
+
 @app.route('/')
 def home():
     return render_template('index.html')
