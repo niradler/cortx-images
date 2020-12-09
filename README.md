@@ -17,3 +17,6 @@ GET /images/{filename} // return original image
 GET /images/120x120/{filename} // return resized image, with=120, height=120
 
 * resized images will be stored for future use.
+
+
+![demo](/static/demo.gif)
