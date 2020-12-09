@@ -12,6 +12,8 @@ The idea is to create an alternative to platforms like cloudinary, and provide o
 
 ### Usage
 
+you can use the provided docker file to build and run the project.
+
 GET /images/{filename} // return original image
 
 GET /images/120x120/{filename} // return resized image, with=120, height=120
