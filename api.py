@@ -1,12 +1,10 @@
 import os
-from dotenv import load_dotenv
+import settings
 import flask
 from flask import send_file, request, abort, render_template
 from functools import wraps
 import bucket
 import image
-
-load_dotenv()
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
@@ -26,7 +24,6 @@ def require_api_key(view_function):
 
 
 @app.route('/images/<size>/<filename>', methods=['GET'])
-@require_api_key
 def get_resized_image(size, filename):
     w, h = size.split("x")
     _, ext = filename.split(".")
@@ -43,7 +40,6 @@ def get_resized_image(size, filename):
 
 
 @app.route('/images/<filename>', methods=['GET'])
-@require_api_key
 def get_image(filename):
     _, ext = filename.split(".")
     file_path = bucket.download(filename)

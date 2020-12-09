@@ -1,13 +1,15 @@
+import os
 import boto3
+import settings
 
 s3 = boto3.resource(
     "s3",
-    endpoint_url='http://uvo1hthw26l85bir0ud.vm.cld.sr',
-    aws_access_key_id='5sWfq4PMTSCH_lWPdwsJZA',
-    aws_secret_access_key='UKCoNKgzn/MNz9nNJDzEv2DajLRE1xzuSL8YclwT',
+    endpoint_url=os.environ.get('endpoint_url'),
+    aws_access_key_id=os.environ.get('aws_access_key_id'),
+    aws_secret_access_key=os.environ.get('aws_secret_access_key'),
 )
 
-bucket = s3.Bucket("images")
+bucket = s3.Bucket(os.environ.get('bucket_name'))
 
 
 def download(filename):
