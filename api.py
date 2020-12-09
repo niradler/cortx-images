@@ -35,6 +35,7 @@ def get_resized_image(size, filename):
     if not file_path:
         return abort(404)
     resized_file_path = image.resize(file_path, (int(w), int(h)))
+    bucket.upload(resized_file_path, filename)
 
     return send_file(resized_file_path, mimetype='image/{}'.format(ext))
 
@@ -56,7 +57,7 @@ def upload():
         image = request.files['image']
         file_path = './.tmp/{}'.format(image.filename)
         image.save(file_path)
-        uploaded = bucket.download(file_path)
+        uploaded = bucket.upload(file_path, image.filename)
         if uploaded:
             return "uploaded"
         return abort(400)

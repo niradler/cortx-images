@@ -22,9 +22,8 @@ def download(filename):
         return None
 
 
-def upload(filename):
+def upload(input_path,filename):
     try:
-        input_path = './.tmp/{}'.format(filename)
         bucket.upload_file(input_path, filename)
 
         return input_path
