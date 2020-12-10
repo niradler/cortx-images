@@ -7,14 +7,15 @@ cortx is an open source s3 compatible storage server.
 for more info on cortx visit https://github.com/Seagate/cortx-s3server.
 
 **What is Images api?**
+
 The idea is to create an api on top of cortx to handle images optimization, basically an alternative to platforms like cloudinary, and provide open source solution for the community to use.
 
-[visit the project repo](https://github.com/niradler/cortx-images)
-
 **What is CORTX?**
+
 CORTX is a distributed object storage system designed for great efficiency, massive capacity, and high HDD-utilization. CORTX is 100% Open Source
 
 **How do CORTX and Images API work together?**
+
 Because CORTX is S3 compatible we can use the storage system and the Images API feature to serve images in different sizes.
 
 **Configuring Images API to work with CORTX:**
