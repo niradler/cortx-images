@@ -40,3 +40,11 @@ GET / // return html page with the demo
 ## Watch the demo 
    
 ![demo](https://github.com/niradler/cortx-images/blob/master/static/demo.gif)
+
+### TODO:
+
+* remove the need for local folder storage
+* provide link or redirect to serve the images faster
+* add compression feature
+* improve upload process and multi part
+* check for sign url support for sharing.
